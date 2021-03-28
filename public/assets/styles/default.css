@@ -15,8 +15,12 @@
 }
 
 .cnx-login-container img {
-    margin-bottom: 50px;
     max-width: 300px;
+}
+
+.cnx-login-container h3 {
+    color: var(--primary-color);
+    margin: 30px auto;
 }
 
 .cnx-login-container input {
