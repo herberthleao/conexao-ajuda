@@ -24,6 +24,14 @@ $router = new Router();
 
 $router->get('/', [HomeController::class, 'get']);
 $router->get('/login', [LoginController::class, 'get']);
+$router->get(
+    '/register/institution',
+    [RegisterController::class, 'getInstitution']
+);
+$router->get(
+    '/register/volunteer',
+    [RegisterController::class, 'getVolunteer']
+);
 
 /**
  * Inicializa a aplicação.

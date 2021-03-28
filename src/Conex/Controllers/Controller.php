@@ -16,11 +16,14 @@ abstract class Controller
     protected Request $request;
     protected Response $response;
 
-    public function __construct(Request $request, Response $response)
-    {
+    public function __construct(
+        Request $request,
+        Response $response,
+        array $data = []
+    ) {
         $this->request = $request;
         $this->response = $response;
-        $this->setView();
+        $this->setView($data);
     }
 
     public function get(): string
@@ -33,9 +36,9 @@ abstract class Controller
         throw new BadMethodCallException('Unsupported method.');
     }
 
-    private function setView(): void
+    private function setView(array $data): void
     {
         $view = str_replace('Controller', 'View', get_class($this));
-        $this->view = new $view();
+        $this->view = new $view($data);
     }
 }

@@ -2,32 +2,51 @@
     --primary-color: #9955FF;
 }
 
-.cnx-page-login {
+.cnx-page-login, .cnx-page-register {
     background: #EEEEEE;
 }
 
-.cnx-login-container {
-    background: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    padding: 70px 60px;
+.cnx-page-register {
+    padding: 50px 0;
 }
 
-.cnx-login-container img {
+.cnx-section-brand {
     max-width: 300px;
 }
 
-.cnx-login-container h3 {
+.cnx-section-title {
     color: var(--primary-color);
     margin: 30px auto;
 }
 
-.cnx-login-container input {
-    border: solid 1px var(--primary-color);
+.cnx-form-container {
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    padding: 70px 60px;
 }
 
-.cnx-login-container input[type=submit] {
+.cnx-form-container input,
+.cnx-form-container textarea,
+.cnx-form-container select {
+    border: solid 1px var(--primary-color);
+    color: #777777;
+}
+
+.cnx-form-container input:focus,
+.cnx-form-container textarea:focus,
+.cnx-form-container select:focus {
+    border: solid 1px var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+    outline: none;
+}
+
+.cnx-form-container textarea {
+    width: 100%;
+}
+
+.cnx-form-container input[type=submit] {
     color: #FFFFFF;
     background: var(--primary-color);
 }

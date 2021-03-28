@@ -1,0 +1,42 @@
+<main class="cnx-page-register min-vh-100 d-flex align-items-center">
+    <div class="cnx-form-container container">
+        <div class="row">
+            <div class="text-center">
+                <a href="{{ host }}">
+                    <img src="{{ host }}assets/images/brand.png" alt="Logo" class="cnx-section-brand img-fluid" />
+                </a>
+                <h3 class="cnx-section-title">Cadastrar Organização</h3>
+            </div>
+            <form>
+                <input name="name" class="form-control form-control-lg mb-4" placeholder="Nome" required />
+                <input name="email" class="form-control form-control-lg mb-4" placeholder="E-mail" required />
+                <input name="pass" type="password" class="form-control form-control-lg mb-4" placeholder="Senha" required />
+                <input name="cnpj" class="form-control form-control-lg mb-4" placeholder="CNPJ" required />
+                <input name="phone" class="form-control form-control-lg mb-4" placeholder="Telefone" required />
+                <div class="input-group mb-4">
+                    <select name="uf" class="form-select form-select-lg" id="states" required>
+                        <option selected disabled>UF</option>
+                    </select>
+                    <select name="city" class="form-select form-select-lg" id="cities" required>
+                        <option selected disabled>Cidade</option>
+                    </select>
+                </div>
+                <div class="input-group mb-4">
+                    <input name="place" class="form-control form-control-lg" placeholder="Logradouro" />
+                    <input name="number" type="number" class="form-control form-control-lg" placeholder="Número" />
+                </div>
+                <div class="input-group mb-4">
+                    <input name="district" class="form-control form-control-lg" placeholder="Bairro" />
+                    <input name="cep" type="number" class="form-control form-control-lg" placeholder="CEP" />
+                </div>
+                <textarea class="form-control form-control-lg mb-4" placeholder="Descrição"></textarea>
+                <input name="submit" type="submit" class="form-control form-control-lg" value="Entrar" />
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<script src="{{ host }}assets/scripts/main.js"></script>
+<script>
+    loadStates('states')
+</script>
