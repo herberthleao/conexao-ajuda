@@ -9,5 +9,7 @@ final class LoginView extends View
         parent::__construct();
 
         $this->data['title'] .= 'Login';
+
+        $this->template->addContent('login');
     }
 }

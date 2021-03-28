@@ -1,0 +1,29 @@
+:root {
+    --primary-color: #9955FF;
+}
+
+.cnx-page-login {
+    background: #EEEEEE;
+}
+
+.cnx-login-container {
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    padding: 70px 60px;
+}
+
+.cnx-login-container img {
+    margin-bottom: 50px;
+    max-width: 300px;
+}
+
+.cnx-login-container input {
+    border: solid 1px var(--primary-color);
+}
+
+.cnx-login-container input[type=submit] {
+    color: #FFFFFF;
+    background: var(--primary-color);
+}
