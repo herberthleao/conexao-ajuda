@@ -15,7 +15,7 @@ abstract class View
         $this->template = new Template();
         $this->template->addPartial('head');
 
-        $this->data['title'] = 'Exemplo &mdash; ';
+        $this->data['title'] = 'Conexão Ajuda &mdash; ';
         $this->data['host'] = '/';
     }
 

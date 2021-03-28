@@ -8,7 +8,7 @@ final class HomeView extends View
     {
         parent::__construct();
 
-        $this->data['title'] .= 'Teste';
+        $this->data['title'] .= 'Boas-vindas!';
 
         $this->template->addContent('home');
         $this->template->addPartial('footer');

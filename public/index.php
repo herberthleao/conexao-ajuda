@@ -23,6 +23,7 @@ use Conex\Router;
 $router = new Router();
 
 $router->get('/', [HomeController::class, 'get']);
+$router->get('/login', [LoginController::class, 'get']);
 
 /**
  * Inicializa a aplicação.

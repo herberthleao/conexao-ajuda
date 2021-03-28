@@ -8,7 +8,7 @@ class ErrorView extends View
     {
         parent::__construct();
 
-        $this->data['title'] .= 'Página não encontrada';
+        $this->data['title'] = 'Página não encontrada';
 
         $this->template->addContent('error');
         $this->template->addPartial('footer');
