@@ -11,8 +11,11 @@
                 <input name="name" class="form-control form-control-lg mb-4" placeholder="Nome" required />
                 <input name="email" class="form-control form-control-lg mb-4" placeholder="E-mail" required />
                 <input name="pass" type="password" class="form-control form-control-lg mb-4" placeholder="Senha" required />
-                <input name="cnpj" class="form-control form-control-lg mb-4" placeholder="CNPJ" required />
+                <input name="cpf" class="form-control form-control-lg mb-4" placeholder="CPF" required />
                 <input name="phone" class="form-control form-control-lg mb-4" placeholder="Telefone" required />
+                <select name="blood" class="form-select form-select-lg mb-4" id="bloods">
+                    <option selected disabled>Tipo Sanguíneo</option>
+                </select>
                 <div class="input-group mb-4">
                     <select name="uf" class="form-select form-select-lg" id="states" required>
                         <option selected disabled>UF</option>
@@ -37,5 +40,6 @@
 </main>
 <script src="{{ host }}assets/scripts/main.js"></script>
 <script>
+    loadBloods('bloods')
     loadStates('states')
 </script>

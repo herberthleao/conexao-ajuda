@@ -1,7 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+/**
+ * Variáveis
+ */
 :root {
     --primary-color: #9955FF;
 }
 
+html, body {
+    font-family: 'Nunito', 'sans-serif';
+}
+
+/**
+ * Home
+ */
+.cnx-banner-container {
+    background: url('../images/banners/main.png') no-repeat var(--primary-color);
+    background-size: cover;
+    padding: 9.5rem 0 5rem 5rem;
+}
+
+.cnx-banner-container p {
+    color: #FFFFFF;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 45px;
+}
+
+.cnx-banner-container strong {
+    font-weight: 800;
+}
+
+.cnx-banner-container .btn {
+    background: #FFFFFF;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    padding: 0.5rem 1.1rem;
+}
+
+.cnx-banner-container .btn:hover {
+    background: #7137C8;
+    color: #FFFFFF;
+}
+
+/**
+ * Login e Cadastro
+ */
 .cnx-page-login, .cnx-page-register {
     background: #EEEEEE;
 }
@@ -10,6 +55,9 @@
     padding: 50px 0;
 }
 
+/**
+ * Seções
+ */
 .cnx-section-brand {
     max-width: 300px;
 }
@@ -19,6 +67,9 @@
     margin: 30px auto;
 }
 
+/**
+ * Formulários
+ */
 .cnx-form-container {
     background: #FFFFFF;
     border-radius: 10px;
@@ -49,4 +100,20 @@
 .cnx-form-container input[type=submit] {
     color: #FFFFFF;
     background: var(--primary-color);
+}
+
+.cnx-form-container input[type=submit]:hover {
+    background: #6E0EFB;
+}
+
+/**
+ * Header
+ */
+.cnx-page-header {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    padding: 30px 0;
+}
+
+.cnx-page-header img {
+    height: 2.5rem;
 }

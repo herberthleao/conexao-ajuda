@@ -10,6 +10,7 @@ final class HomeView extends View
 
         $this->data['title'] .= 'Boas-vindas!';
 
+        $this->template->addPartial('header');
         $this->template->addContent('home');
         $this->template->addPartial('footer');
     }

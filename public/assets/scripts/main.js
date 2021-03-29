@@ -1,3 +1,16 @@
+function loadBloods(id) {
+    var bloods = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+    var option = null;
+    var select = document.getElementById(id)
+
+    for (var i = 0; i < bloods.length; i++) {
+        option = document.createElement('option')
+        option.setAttribute('value', bloods[i])
+        option.insertAdjacentText('afterbegin', bloods[i])
+        select.appendChild(option)
+    }
+}
+
 function loadStates(id) {
     var states = [
         'AC',
