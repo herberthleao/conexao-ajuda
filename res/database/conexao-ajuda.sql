@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 28/03/2021 às 19:39
+-- Tempo de geração: 30/03/2021 às 00:37
 -- Versão do servidor: 10.4.17-MariaDB
 -- Versão do PHP: 8.0.1
 
@@ -30,6 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `area_atuacao` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
+  `data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
+  `data_atualizacao` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `cidade`
+--
+
+CREATE TABLE `cidade` (
+  `id` int(11) NOT NULL,
+  `cod_cidade` varchar(80) NOT NULL,
+  `nome` varchar(80) NOT NULL,
+  `uf` varchar(20) NOT NULL,
   `data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
   `data_atualizacao` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -130,6 +145,12 @@ ALTER TABLE `area_atuacao`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `cidade`
+--
+ALTER TABLE `cidade`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `eventos`
 --
 ALTER TABLE `eventos`
@@ -157,6 +178,12 @@ ALTER TABLE `voluntario`
 -- AUTO_INCREMENT de tabela `area_atuacao`
 --
 ALTER TABLE `area_atuacao`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `cidade`
+--
+ALTER TABLE `cidade`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
