@@ -25,6 +25,8 @@ $router = new Router();
 // Site
 $router->get('/', [HomeController::class, 'get']);
 $router->get('/login', [LoginController::class, 'get']);
+$router->post('/login', [LoginController::class, 'checkLogin']);
+
 $router->get(
     '/register/institution',
     [RegisterController::class, 'getInstitution']

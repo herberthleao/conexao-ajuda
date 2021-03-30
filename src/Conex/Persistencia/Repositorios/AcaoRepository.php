@@ -40,4 +40,10 @@ final class AcaoRepository extends Repository
 
         return $actions;
     }
+
+    public function setAcoes(): void
+    {
+        $query = 'INSERT INTO'.$this->entidade->getTable().'() VALUES ()';
+        $result = $this->database->insertQuery($query);
+    }
 }
