@@ -5,6 +5,7 @@ namespace Conex\Persistencia\Entidades;
 abstract class AbsId
 {
     protected $id;
+    protected string $table;
 
     public function __construct($id)
     {
@@ -19,5 +20,10 @@ abstract class AbsId
     function getId()
     {
         return $this->id;
+    }
+
+    public function getTable(): string
+    {
+        return $this->table;
     }
 }

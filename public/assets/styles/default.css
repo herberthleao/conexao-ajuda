@@ -5,6 +5,7 @@
  */
 :root {
     --primary-color: #9955FF;
+    --secondary-color: #7137C8;
 }
 
 html, body {
@@ -17,7 +18,7 @@ html, body {
 .cnx-banner-container {
     background: url('../images/banners/main.png') no-repeat var(--primary-color);
     background-size: cover;
-    padding: 9.5rem 0 5rem 5rem;
+    padding: 9rem 0 5.4rem 5rem;
 }
 
 .cnx-banner-container p {
@@ -40,7 +41,7 @@ html, body {
 }
 
 .cnx-banner-container .btn:hover {
-    background: #7137C8;
+    background: var(--secondary-color);
     color: #FFFFFF;
 }
 
@@ -65,6 +66,21 @@ html, body {
 .cnx-section-title {
     color: var(--primary-color);
     margin: 30px auto;
+    text-align: center;
+}
+
+.cnx-primary-button {
+    background: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.cnx-primary-button:hover {
+    background: var(--secondary-color);
+    color: #FFFFFF;
+}
+
+.cnx-primary-button:focus {
+    box-shadow: 0 0 5px var(--primary-color);
 }
 
 /**
@@ -110,10 +126,82 @@ html, body {
  * Header
  */
 .cnx-page-header {
+    background: #FFFFFF;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    padding: 30px 0;
+    padding: 15px 0;
+}
+
+.cnx-page-header nav {
+    background: inherit !important;
 }
 
 .cnx-page-header img {
     height: 2.5rem;
+}
+
+.cnx-page-header a {
+    font-size: 1.2rem;
+}
+
+.cnx-header-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/**
+ * Footer
+ */
+.cnx-page-footer {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.cnx-page-footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cnx-page-footer a:hover {
+    text-decoration: underline;
+}
+
+/**
+ * Timeline
+ */
+.cnx-section-timeline {
+    background: #EEEEEE;
+    padding: 30px 0 60px 0;
+}
+
+.cnx-section-timeline .cnx-section-title {
+    font-weight: 800;
+}
+
+.cnx-section-timeline .cnx-section-card {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    padding: 0.5rem;
+}
+
+.cnx-section-timeline .cnx-section-card:hover {
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.cnx-section-timeline a {
+    background: #FFFFFF;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    float: right;
+}
+
+.cnx-section-timeline a:hover {
+    background: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.cnx-section-timeline a:focus {
+    box-shadow: 0 0 5px var(--primary-color);
 }

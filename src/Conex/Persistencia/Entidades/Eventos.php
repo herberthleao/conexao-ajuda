@@ -9,12 +9,19 @@ class Eventos extends AbsId
     protected $idOng;
     protected $idArea;
 
-    public function __construct($nome, $descricao, $idOng, $idArea)
-    {
+    public function __construct(
+        $id = 0,
+        $nome = '',
+        $descricao = '',
+        $idOng = '',
+        $idArea = ''
+    ) {
+        parent::__construct($id);
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->idOng = $idOng;
         $this->idArea = $idArea;
+        $this->table = 'eventos';
     }
 
     public function setNome($nome)

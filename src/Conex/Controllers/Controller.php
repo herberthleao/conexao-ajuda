@@ -5,6 +5,7 @@ namespace Conex\Controllers;
 use Conex\Request;
 use Conex\Response;
 
+use Conex\Services\Service;
 use Conex\Views\View;
 
 use BadMethodCallException;
@@ -23,6 +24,7 @@ abstract class Controller
     ) {
         $this->request = $request;
         $this->response = $response;
+        $this->setService();
         $this->setView($data);
     }
 
@@ -34,6 +36,12 @@ abstract class Controller
     public function post(): string
     {
         throw new BadMethodCallException('Unsupported method.');
+    }
+
+    private function setService(): void
+    {
+        $service = str_replace('Controller', 'Service', get_class($this));
+        $this->service = new $service();
     }
 
     private function setView(array $data): void

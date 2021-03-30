@@ -32,6 +32,10 @@ $router->get(
     '/register/volunteer',
     [RegisterController::class, 'getVolunteer']
 );
+$router->get('/partner', [PartnerController::class, 'get']);
+
+// API
+$router->get('/api/actions', [ActionController::class, 'getActionsData']);
 
 /**
  * Inicializa a aplicação.
