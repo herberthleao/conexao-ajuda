@@ -4,10 +4,10 @@
             <a href="{{ host }}" class="navbar-brand">
                 <img src="{{ host }}assets/images/brand.png" alt="Logo" class="img-fluid" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="menu" class="navbar-toggler" style="display: none !important" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav" style="display: none !important">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a href="{{ host }}register/institution" class="cnx-header-link nav-link">Sou Instituição</a>
@@ -21,6 +21,9 @@
                 </ul>
                 <a href="{{ host }}login" class="cnx-primary-button btn">Login</a>
             </div>
+            <div class="cnx-header-profile" id="profile" style="display: none">
+                <p>Olá, <strong>{{ user }}</strong></p>
+            </div>    
         </div>
     </nav>
 </header>

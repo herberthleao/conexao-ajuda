@@ -22,6 +22,7 @@ use Conex\Router;
  */
 $router = new Router();
 
+// Site
 $router->get('/', [HomeController::class, 'get']);
 $router->get('/login', [LoginController::class, 'get']);
 $router->get(
@@ -33,9 +34,14 @@ $router->get(
     [RegisterController::class, 'getVolunteer']
 );
 $router->get('/partner', [PartnerController::class, 'get']);
+$router->get('/timeline', [TimelineController::class, 'get']);
 
 // API
-$router->get('/api/actions', [ActionController::class, 'getActionsData']);
+$router->post('/api/actions', [ActionController::class, 'getActionsData']);
+$router->get(
+    '/api/actions/next',
+    [ActionController::class, 'getNextActionsData']
+);
 
 /**
  * Inicializa a aplicação.

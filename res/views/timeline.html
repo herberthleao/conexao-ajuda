@@ -1,0 +1,22 @@
+<main class="cnx-section-timeline">
+    <form class="cnx-timeline-search" onsubmit="return search(this)">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <input class="form-control form-control-lg mb-4" />
+                </div>
+                <div class="col-3">
+                    <input class="form-control form-control-lg" type="submit" value="Pesquisar" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <h1 class="cnx-section-title">Ações</h1>
+        <div class="row" id="timeline"></div>
+    </div>
+</main>
+<script src="{{ host }}assets/scripts/timeline.js"></script>
+<script>
+    loadActions('timeline')
+</script>

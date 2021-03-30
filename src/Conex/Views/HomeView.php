@@ -9,6 +9,8 @@ final class HomeView extends View
         parent::__construct();
 
         $this->data['title'] .= 'Boas-vindas!';
+        $this->data['show'] = '["navbarNav"]';
+        $this->data['hide'] = '["profile"]';
 
         $this->template->addPartial('header');
         $this->template->addContent('home');

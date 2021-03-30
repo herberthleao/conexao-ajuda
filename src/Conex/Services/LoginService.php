@@ -2,7 +2,7 @@
 
 namespace Conex\Services;
 
-final class HomeService extends Service
+final class LoginService extends Service
 {
     
 }

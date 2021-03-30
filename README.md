@@ -19,6 +19,6 @@
 |Nome|E-mail|Função|
 | -------- | -------- | -------- |
 |André Luan |andreluan176@gmail.com|Administrador do banco de dados|
-|Erisson ||Back end|
-|Herberth Leão ||Front end|
-|Stheyce ||Back end|
+|Erisson ||Back-end|
+|Herberth Leão |herberth@leao.sh|Front-end|
+|Stheyce ||Back-end|
