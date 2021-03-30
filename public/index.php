@@ -24,6 +24,18 @@ $router = new Router();
 
 $router->get('/', [HomeController::class, 'get']);
 $router->get('/login', [LoginController::class, 'get']);
+$router->get(
+    '/register/institution',
+    [RegisterController::class, 'getInstitution']
+);
+$router->get(
+    '/register/volunteer',
+    [RegisterController::class, 'getVolunteer']
+);
+$router->get('/partner', [PartnerController::class, 'get']);
+
+// API
+$router->get('/api/actions', [ActionController::class, 'getActionsData']);
 
 /**
  * Inicializa a aplicação.
