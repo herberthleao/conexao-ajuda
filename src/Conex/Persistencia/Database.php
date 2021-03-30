@@ -10,8 +10,8 @@ final class Database
     private static $instance;
     private string $host = 'localhost';
     private string $user = 'root';
-    private string $pass = '54321';
-    private string $name = 'conex';
+    private string $pass = '';
+    private string $name = 'conexao-ajuda';
 
     private function __construct()
     {

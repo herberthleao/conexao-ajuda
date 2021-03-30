@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 30-Mar-2021 às 17:01
--- Versão do servidor: 10.5.9-MariaDB
--- versão do PHP: 8.0.3
+-- Tempo de geração: 30/03/2021 às 20:06
+-- Versão do servidor: 10.4.17-MariaDB
+-- Versão do PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `conex`
+-- Banco de dados: `conexao-ajuda`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `area_atuacao`
+-- Estrutura para tabela `area_atuacao`
 --
 
 CREATE TABLE `area_atuacao` (
@@ -35,7 +35,7 @@ CREATE TABLE `area_atuacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `area_atuacao`
+-- Despejando dados para a tabela `area_atuacao`
 --
 
 INSERT INTO `area_atuacao` (`id`, `nome`, `data_criacao`, `data_atualizacao`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `area_atuacao` (`id`, `nome`, `data_criacao`, `data_atualizacao`) VA
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `eventos`
+-- Estrutura para tabela `eventos`
 --
 
 CREATE TABLE `eventos` (
@@ -62,7 +62,7 @@ CREATE TABLE `eventos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `eventos`
+-- Despejando dados para a tabela `eventos`
 --
 
 INSERT INTO `eventos` (`id`, `nome`, `descricao`, `data_criacao`, `data_atualizacao`, `id_ong`, `id_area`, `tipo`, `cidade`, `uf`, `data`) VALUES
@@ -79,7 +79,22 @@ INSERT INTO `eventos` (`id`, `nome`, `descricao`, `data_criacao`, `data_atualiza
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ong`
+-- Estrutura para tabela `incentivo`
+--
+
+CREATE TABLE `incentivo` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(50) NOT NULL,
+  `descricao` text NOT NULL,
+  `id_parceiro` int(11) NOT NULL,
+  `data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
+  `data_atualizacao` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `ong`
 --
 
 CREATE TABLE `ong` (
@@ -98,7 +113,7 @@ CREATE TABLE `ong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `ong`
+-- Despejando dados para a tabela `ong`
 --
 
 INSERT INTO `ong` (`id`, `nome`, `cnpj`, `descricao`, `telefone`, `cidade`, `numero`, `cep`, `bairro`, `data_criacao`, `data_atualizacao`, `senha`) VALUES
@@ -107,7 +122,22 @@ INSERT INTO `ong` (`id`, `nome`, `cnpj`, `descricao`, `telefone`, `cidade`, `num
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `voluntario`
+-- Estrutura para tabela `parceiros`
+--
+
+CREATE TABLE `parceiros` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `cnpj` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
+  `data_atualizacao` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `voluntario`
 --
 
 CREATE TABLE `voluntario` (
@@ -133,7 +163,7 @@ CREATE TABLE `voluntario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `volun_atuacao`
+-- Estrutura para tabela `volun_atuacao`
 --
 
 CREATE TABLE `volun_atuacao` (
@@ -144,7 +174,7 @@ CREATE TABLE `volun_atuacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `volun_evento`
+-- Estrutura para tabela `volun_evento`
 --
 
 CREATE TABLE `volun_evento` (
@@ -157,13 +187,13 @@ CREATE TABLE `volun_evento` (
 --
 
 --
--- Índices para tabela `area_atuacao`
+-- Índices de tabela `area_atuacao`
 --
 ALTER TABLE `area_atuacao`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `eventos`
+-- Índices de tabela `eventos`
 --
 ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id`),
@@ -171,19 +201,32 @@ ALTER TABLE `eventos`
   ADD KEY `id_area_evento` (`id_area`);
 
 --
--- Índices para tabela `ong`
+-- Índices de tabela `incentivo`
+--
+ALTER TABLE `incentivo`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_parceiros_incentivo` (`id_parceiro`);
+
+--
+-- Índices de tabela `ong`
 --
 ALTER TABLE `ong`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `voluntario`
+-- Índices de tabela `parceiros`
+--
+ALTER TABLE `parceiros`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `voluntario`
 --
 ALTER TABLE `voluntario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -199,21 +242,39 @@ ALTER TABLE `eventos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT de tabela `incentivo`
+--
+ALTER TABLE `incentivo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `parceiros`
+--
+ALTER TABLE `parceiros`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `voluntario`
 --
 ALTER TABLE `voluntario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `eventos`
+-- Restrições para tabelas `eventos`
 --
 ALTER TABLE `eventos`
   ADD CONSTRAINT `id_area_evento` FOREIGN KEY (`id_area`) REFERENCES `area_atuacao` (`id`),
   ADD CONSTRAINT `id_ong_evento` FOREIGN KEY (`id_ong`) REFERENCES `ong` (`id`);
+
+--
+-- Restrições para tabelas `incentivo`
+--
+ALTER TABLE `incentivo`
+  ADD CONSTRAINT `fk_parceiros_incentivo` FOREIGN KEY (`id_parceiro`) REFERENCES `parceiros` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
