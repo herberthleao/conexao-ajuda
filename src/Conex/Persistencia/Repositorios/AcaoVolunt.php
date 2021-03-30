@@ -44,4 +44,12 @@ final class AcaoVolunt extends Repository
 
         return $entidades;
     }
+
+    public function setAcoes(): void
+    {
+        $result = $this->database->insertQuery(
+            'INSERT INTO voluntario(nome, email, cpf, telefone, disponibilidade,
+             tipoSangue, descricao, logradouro, numero, complemento, cep, bairro, senha) values'
+        );
+    }
 }

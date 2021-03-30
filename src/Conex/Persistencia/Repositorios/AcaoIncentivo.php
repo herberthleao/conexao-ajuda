@@ -33,4 +33,11 @@ final class AcaoIncentivo extends Repository
 
         return $entidades;
     }
+
+    public function setAcoes(): void
+    {
+        $result = $this->database->insertQuery(
+            'INSERT INTO incentivo(titulo, descricao, idParceiro) values'
+        );
+    }
 }

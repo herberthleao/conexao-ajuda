@@ -34,4 +34,11 @@ final class AcaoParceiros extends Repository
 
         return $entidades;
     }
+
+    public function setAcoes(): void
+    {
+        $result = $this->database->insertQuery(
+            'INSERT INTO parceiros(nome, cnpj, senha) values'
+        );
+    }
 }

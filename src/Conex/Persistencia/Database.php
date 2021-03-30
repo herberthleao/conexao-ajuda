@@ -17,7 +17,7 @@ final class Database
     {
         $this->connect();
     }
-    
+
     public static function getInstance()
     {
         if (!static::$instance) {
@@ -42,5 +42,11 @@ final class Database
             $this->pass
         );
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+
+    public function insertQuery(string $query)
+    {
+        $sth = $this->pdo->prepare($query);
+        $sth->execute();
     }
 }

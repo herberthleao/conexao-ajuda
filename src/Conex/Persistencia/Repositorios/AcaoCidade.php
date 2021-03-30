@@ -33,4 +33,11 @@ final class Acaocidade extends Repository
 
         return $entidades;
     }
+
+    public function setAcoes(): void
+    {
+        $result = $this->database->insertQuery(
+            'INSERT INTO cidade(codCidade, nome, uf) values '
+        );
+    }
 }

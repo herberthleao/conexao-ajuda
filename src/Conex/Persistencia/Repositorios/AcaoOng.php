@@ -40,4 +40,11 @@ final class AcaoOng extends Repository
 
         return $entidades;
     }
+
+    public function setAcoes(): void
+    {
+        $result = $this->database->insertQuery(
+            'INSERT INTO ong(nome, cnpj, descricao, telefone, cidade, numero, cep, bairro, senha) values'
+        );
+    }
 }

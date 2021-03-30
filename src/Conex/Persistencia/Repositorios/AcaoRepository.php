@@ -35,4 +35,11 @@ final class AcaoRepository extends Repository
 
         return $entidades;
     }
+
+    public function setAcoes(): void
+    {
+        $result = $this->database->insertQuery(
+            'INSERT INTO eventos(nome, descricao, ong, area) values'
+        );
+    }
 }
