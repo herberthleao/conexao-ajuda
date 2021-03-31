@@ -20,12 +20,19 @@ abstract class Controller
     public function __construct(
         Request $request,
         Response $response,
-        array $data = []
+        array $data = [],
+        bool $view = true,
+        bool $service = false
     ) {
         $this->request = $request;
         $this->response = $response;
-        $this->setService();
-        $this->setView($data);
+
+        if ($service) {
+            $this->setService();
+        }
+        if ($view) {
+            $this->setView($data);
+        }
     }
 
     public function get(): string

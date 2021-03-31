@@ -10,14 +10,14 @@ final class Database
     private static $instance;
     private string $host = 'localhost';
     private string $user = 'root';
-    private string $pass = '54321';
-    private string $name = 'conex';
+    private string $pass = '';
+    private string $name = 'conexao-ajuda';
 
     private function __construct()
     {
         $this->connect();
     }
-
+    
     public static function getInstance()
     {
         if (!static::$instance) {
@@ -42,11 +42,5 @@ final class Database
             $this->pass
         );
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-
-    public function insertQuery(string $query)
-    {
-        $sth = $this->pdo->prepare($query);
-        $sth->execute();
     }
 }

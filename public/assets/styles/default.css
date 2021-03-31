@@ -96,14 +96,16 @@ html, body {
 
 .cnx-form-container input,
 .cnx-form-container textarea,
-.cnx-form-container select {
+.cnx-form-container select,
+.cnx-timeline-search input {
     border: solid 1px var(--primary-color);
     color: #777777;
 }
 
 .cnx-form-container input:focus,
 .cnx-form-container textarea:focus,
-.cnx-form-container select:focus {
+.cnx-form-container select:focus,
+.cnx-timeline-search input:focus {
     border: solid 1px var(--primary-color);
     box-shadow: 0 0 5px var(--primary-color);
     outline: none;
@@ -113,13 +115,15 @@ html, body {
     width: 100%;
 }
 
-.cnx-form-container input[type=submit] {
+.cnx-form-container input[type=submit],
+.cnx-timeline-search input[type=submit] {
     color: #FFFFFF;
     background: var(--primary-color);
 }
 
-.cnx-form-container input[type=submit]:hover {
-    background: #6E0EFB;
+.cnx-form-container input[type=submit]:hover,
+.cnx-timeline-search input[type=submit]:hover {
+    background: var(--secondary-color);
 }
 
 /**
@@ -145,6 +149,10 @@ html, body {
 
 .cnx-header-link:hover {
     color: var(--primary-color) !important;
+}
+
+.cnx-header-profile {
+    font-size: 1.2rem;
 }
 
 /**
@@ -173,11 +181,12 @@ html, body {
  */
 .cnx-section-timeline {
     background: #EEEEEE;
-    padding: 30px 0 60px 0;
+    padding: 0 0 60px 0;
 }
 
 .cnx-section-timeline .cnx-section-title {
     font-weight: 800;
+    margin-top: 50px;
 }
 
 .cnx-section-timeline .cnx-section-card {
@@ -204,4 +213,13 @@ html, body {
 
 .cnx-section-timeline a:focus {
     box-shadow: 0 0 5px var(--primary-color);
+}
+
+/**
+ * Search
+ */
+.cnx-timeline-search
+{
+    background: #DDDDDD;
+    padding: 50px 0 30px 0;
 }

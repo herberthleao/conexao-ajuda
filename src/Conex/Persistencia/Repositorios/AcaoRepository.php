@@ -12,34 +12,32 @@ final class AcaoRepository extends Repository
         $this->entidade = new Eventos();
     }
 
-    public function getAcoes(): array
+    public function getAcoes(int $limit): array
     {
-        $entidades = [];
-        $result = $this->database->query(
-            'SELECT acao.*, ong.nome as ong, area.nome as area
+        $actions = [];
+        $query = 'SELECT acao.*, ong.nome as ong, area.nome as area
             FROM ' . $this->entidade->getTable() . ' as acao,
-            ong, area_atuacao as area'
-        );
+            ong, area_atuacao as area ORDER BY data DESC';
+        $query .= ($limit > 0) ? ' LIMIT ' . $limit : ''; 
+
+        $result = $this->database->query($query);
 
         if ($result) {
-            foreach ($result as $entidade) {
-                $entidades[] = new Eventos(
-                    $entidade->id,
-                    $entidade->nome,
-                    $entidade->descricao,
-                    $entidade->ong,
-                    $entidade->area
+            foreach ($result as $action) {
+                $actions[] = new Eventos(
+                    $action->id,
+                    $action->nome,
+                    $action->descricao,
+                    $action->ong,
+                    $action->area,
+                    $action->tipo,
+                    $action->uf,
+                    $action->cidade,
+                    $action->data
                 );
             }
         }
 
-        return $entidades;
-    }
-
-    public function setAcoes(): void
-    {
-        $result = $this->database->insertQuery(
-            'INSERT INTO eventos(nome, descricao, ong, area) values'
-        );
+        return $actions;
     }
 }

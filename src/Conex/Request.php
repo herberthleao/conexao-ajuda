@@ -29,4 +29,9 @@ final class Request
     {
         return $this->parsedURI;
     }
+
+    public function getParam(string $name): string
+    {
+        return ($_REQUEST[$name]) ? $_REQUEST[$name] : '';
+    }
 }

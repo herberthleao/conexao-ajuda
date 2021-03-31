@@ -20,5 +20,5 @@
 | -------- | -------- | -------- |
 |André Luan |andreluan176@gmail.com|Administrador do banco de dados|
 |Erisson Calado |erisson2@gmail.com|Back end|
-|Herberth Leão ||Front end|
-|Stheyce ||Back end|
+|Stheyce Souza |stheycesouza15@gmail.com|Back-end|
+|Herberth Leão |herberth@leao.sh|Front-end|
