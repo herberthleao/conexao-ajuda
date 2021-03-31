@@ -7,12 +7,12 @@
                 </a>
                 <h3 class="cnx-section-title">Login</h3>
             </div>
-            <form>
-                <input name="email" class="form-control form-control-lg mb-4" placeholder="E-mail" required />
+            <form onsubmit="return login(this)">
+                <input name="user" class="form-control form-control-lg mb-4" placeholder="E-mail" required />
                 <input name="pass" type="password" class="form-control form-control-lg mb-4" placeholder="Senha" required />
                 <input name="submit" type="submit" class="form-control form-control-lg" value="Entrar" />
-                </div>
             </form>
         </div>
     </div>
 </main>
+<script src="{{ host }}assets/scripts/form.js"></script>

@@ -89,3 +89,20 @@ function showForm(name, showName) {
     }
     hiddenForm.display = 'block'
 }
+
+function login(form) {
+    $.ajax({
+        url: '/login',
+        type: 'POST',
+        dataType: 'JSON',
+        data: {
+            user: form.elements['user'].value,
+            pass: form.elements['pass'].value
+        },
+        success: (response) => {
+            window.location.href = '/timeline'
+        }
+    })
+
+    return false
+}
