@@ -1,4 +1,4 @@
-![](/public/assets/images/conexao-ajuda.png)
+![](/res/images/conex.png)
 
 ## Projeto Criado durante o Hackathon promovido pela Softex (23-31 de Março de 2021).
 
