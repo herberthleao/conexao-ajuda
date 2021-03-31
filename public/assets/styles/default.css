@@ -199,19 +199,22 @@ html, body {
     box-shadow: 0 0 5px var(--primary-color);
 }
 
-.cnx-section-timeline a {
+.cnx-section-timeline a,
+.cnx-section-timeline button {
     background: #FFFFFF;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     float: right;
 }
 
-.cnx-section-timeline a:hover {
+.cnx-section-timeline a:hover,
+.cnx-section-timeline button:hover {
     background: var(--primary-color);
     color: #FFFFFF;
 }
 
-.cnx-section-timeline a:focus {
+.cnx-section-timeline a:focus
+.cnx-section-timeline button:focus {
     box-shadow: 0 0 5px var(--primary-color);
 }
 

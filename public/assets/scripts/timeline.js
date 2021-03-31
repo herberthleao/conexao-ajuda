@@ -76,10 +76,19 @@ function createCards(id, data) {
             buttonTitle = (id == 'timeline')
                 ? 'Candidatar'
                 : 'Contribuir';
-            button = document.createElement('a')
-            button.setAttribute('class', 'btn')
-            button.setAttribute('href', '/login')
-            button.insertAdjacentText('afterbegin', buttonTitle)
+            if (id == 'preview') {
+                button = document.createElement('a')
+                button.setAttribute('class', 'btn')
+                button.setAttribute('href', '/login')
+                button.insertAdjacentText('afterbegin', buttonTitle)
+            } else {
+                button = document.createElement('button')
+                button.setAttribute('class', 'btn')
+                button.setAttribute('onclick', 'registerCandidate(this.value)')
+                button.setAttribute('id', data[i].id)
+                button.setAttribute('value', data[i].id)
+                button.insertAdjacentText('afterbegin', buttonTitle)    
+            }
 
             body.appendChild(type)
             body.appendChild(location)
@@ -93,4 +102,10 @@ function createCards(id, data) {
             parent.appendChild(col)
         }
     }
+}
+
+function registerCandidate(id) {
+    var button = document.getElementById(id)
+    button.setAttribute('class', 'btn disabled')
+    button.innerText = 'Candidatado'
 }

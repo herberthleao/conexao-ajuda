@@ -106,3 +106,7 @@ function login(form) {
 
     return false
 }
+
+function register() {
+    return false
+}

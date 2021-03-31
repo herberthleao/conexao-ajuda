@@ -7,7 +7,7 @@
                 </a>
                 <h3 class="cnx-section-title">Cadastrar {{ type }}</h3>
             </div>
-            <form>
+            <form onsubmit="return register()">
                 <input name="name" class="form-control form-control-lg mb-4" placeholder="Nome" required />
                 <input name="email" class="form-control form-control-lg mb-4" placeholder="E-mail" required />
                 <input name="pass" type="password" class="form-control form-control-lg mb-4" placeholder="Senha" required />
@@ -30,7 +30,7 @@
                     <input name="cep" type="number" class="form-control form-control-lg" placeholder="CEP" />
                 </div>
                 <textarea name="descricao" class="form-control form-control-lg mb-4" placeholder="Descrição"></textarea>
-                <input name="submit" type="submit" class="form-control form-control-lg" value="Entrar" />
+                <input name="submit" type="submit" class="form-control form-control-lg" value="Cadastrar" />
             </form>
         </div>
     </div>
