@@ -42,6 +42,7 @@ $router->get(
     '/api/actions/next',
     [ActionController::class, 'getNextActionsData']
 );
+$router->post('/api/search', [ActionController::class, 'findActions']);
 
 /**
  * Inicializa a aplicação.

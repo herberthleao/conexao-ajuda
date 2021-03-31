@@ -29,4 +29,23 @@ final class ActionService extends Service
 
         return $data;
     }
+
+    public function getActionsByKeywords(string $keywords): array
+    {
+        $words = array_unique(explode(' ', strtoupper(trim($keywords))));
+        $data = [];
+        foreach ($this->repository->findActions($words) as $key => $action) {
+            $data[$key]['id'] = $action->getId();
+            $data[$key]['name'] = $action->getNome();
+            $data[$key]['description'] = $action->getDescricao();
+            $data[$key]['institution'] = $action->getIdOng();
+            $data[$key]['area'] = $action->getIdArea();
+            $data[$key]['type'] = $action->getTipo();
+            $data[$key]['location'] = $action->getCidade()
+                . ', ' . $action->getUF();
+            $data[$key]['date'] = Date::format($action->getData());
+        }
+
+        return $data;
+    }
 }

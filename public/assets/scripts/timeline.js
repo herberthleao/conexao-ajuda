@@ -26,7 +26,9 @@ function createCards(id, data) {
     var date = null
     var button = null
 
-    var buttonTitle = '';
+    var buttonTitle = ''
+
+    parent.innerHTML = ''
 
     if (data.length > 0) {
         for (var i = 0; i < data.length; i++) {
