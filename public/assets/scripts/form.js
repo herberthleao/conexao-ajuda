@@ -55,3 +55,37 @@ function loadStates(id) {
 function loadCities(uf) {
     
 }
+
+function validatePartner(form) {
+    var cnpj = form.elements['cnpj'].value
+    var pass = form.elements['pass'].value
+
+    $.ajax({
+        url: '/api/partner',
+        type: 'POST',
+        dataType: 'JSON',
+        data: {
+            cnpj: cnpj,
+            pass: pass
+        },
+        success: (response) => {
+            if (response == true) {
+                alert('Parceiro não encontrado!')
+            } else if (response == false) {
+                alert('Senha inválida.')
+            } else {
+                showForm(response, form)
+            }
+        }
+    })
+
+    return false
+}
+
+function showForm(name, showName) {
+    var hiddenForm = document.getElementById('hiddenForm')
+    if (showName) {
+        hiddenForm.elements['name'].value = name
+    }
+    hiddenForm.display = 'block'
+}

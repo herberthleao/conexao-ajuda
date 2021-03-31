@@ -35,6 +35,45 @@ final class AcaoParceiros extends Repository
         return $entidades;
     }
 
+    public function checkPartner(string $cnpj): bool
+    {
+        $result = $this->database->query(
+            "SELECT COUNT(*) FROM parceiros WHERE cnpj = '$cnpj'"
+        );
+
+        if ($result > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function checkPass(string $cnpj, string $pass): bool
+    {
+        $result = $this->database->query(
+            "SELECT COUNT(*) FROM parceiros WHERE cnpj = '$cnpj' AND senha = '$pass'"
+        );
+
+        if ($result > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function getName(string $cnpj): string
+    {
+        $result = $this->database->query(
+            "SELECT * FROM parceiros WHERE cnpj = '$cnpj'"
+        );
+
+        if ($result) {
+            return $result[0]->nome;
+        }
+
+        return '';
+    }
+
     public function setAcoes(): void
     {
         $result = $this->database->insertQuery(
