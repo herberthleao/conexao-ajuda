@@ -1,0 +1,23 @@
+<main class="cnx-page-register min-vh-100 d-flex align-items-center">
+    <div class="cnx-form-container container">
+        <div class="row">
+            <div class="text-center">
+                <a href="{{ host }}">
+                    <img src="{{ host }}assets/images/brand.png" alt="Logo" class="cnx-section-brand img-fluid" />
+                </a>
+                <h3 class="cnx-section-title">Parceiros</h3>
+            </div>
+            <form onsubmit="return validatePartner(this)">
+                <input name="name" class="form-control form-control-lg mb-4" placeholder="Nome" disabled />
+                <input name="cnpj" class="form-control form-control-lg mb-4" placeholder="CNPJ" id="cnpj" maxlength="18" required />
+                <input name="pass" type="password" class="form-control form-control-lg mb-4" placeholder="Senha" required />
+                <input name="access" type="submit" class="form-control form-control-lg" value="Acessar" />
+                <input name="submit" type="submit" class="form-control form-control-lg" value="Cadastrar" style="display: none" />
+            </form>
+        </div>
+    </div>
+</main>
+<script src="{{ host }}assets/scripts/form.js"></script>
+<script>
+    $('#cnpj').mask('##.###.###/####-##')
+</script>

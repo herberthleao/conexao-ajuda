@@ -18,4 +18,11 @@ final class ActionController extends Controller
             (int) $this->request->getParam('limit')
         ));
     }
+
+    public function findActions(): string
+    {
+        return json_encode($this->service->getActionsByKeywords(
+            $this->request->getParam('keywords')
+        ));
+    }
 }

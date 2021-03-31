@@ -19,8 +19,24 @@ class Voluntario extends AbsId
     protected $bairro;
     protected $senha;
 
-    public function __construct($nome, $email, $cpf, $telefone, $disponibilidade, $tipoSangue, $descricao, $cidade, $logradouro, $numero, $complemento, $cep, $bairro, $senha)
-    {
+    public function __construct(
+        $id = 0,
+        $nome = '',
+        $email = '',
+        $cpf = '',
+        $telefone = '',
+        $disponibilidade = '',
+        $tipoSangue = '',
+        $descricao = '',
+        $cidade = '',
+        $logradouro = '',
+        $numero = '',
+        $complemento = '',
+        $cep = '',
+        $bairro = '',
+        $senha = ''
+    ) {
+        parent::__construct($id);
         $this->nome = $nome;
         $this->email = $email;
         $this->cpf = $cpf;
@@ -35,6 +51,7 @@ class Voluntario extends AbsId
         $this->cep = $cep;
         $this->bairro = $bairro;
         $this->senha = $senha;
+        $this->table = 'voluntario';
     }
 
     public function setNome($nome)
