@@ -4,7 +4,7 @@
 
 ## :rocket: Descrição
 
-  A plataforma **Conexão ajuda** veio para promover uma transformação maior no meio da voluntarização. 
+  A plataforma **Conexão Ajuda** veio para promover uma transformação maior no meio da voluntarização, facilitando o encontro entre as organizações, pessoas voluntárias e ações.
 
 ## :computer: Tecnologias
 
@@ -19,6 +19,6 @@
 |Nome|E-mail|Função|
 | -------- | -------- | -------- |
 |André Luan |andreluan176@gmail.com|Administrador do banco de dados|
-|Erisson Calado |erisson2@gmail.com|Back end|
+|Erisson Calado |erisson2@gmail.com|Back-end|
 |Stheyce Souza |stheycesouza15@gmail.com|Back-end|
 |Herberth Leão |herberth@leao.sh|Front-end|
