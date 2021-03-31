@@ -14,8 +14,19 @@ class Ong extends AbsId
     protected $bairro;
     protected $senha;
 
-    public function __construct($nome, $cnpj, $descricao, $telefone, $cidade, $numero, $cep, $bairro, $senha)
-    {
+    public function __construct(
+        $id = 0,
+        $nome = '',
+        $cnpj = '',
+        $descricao = '',
+        $telefone = '',
+        $cidade = '',
+        $numero = '',
+        $cep = '',
+        $bairro = '',
+        $senha = ''
+    ) {
+        parent::__construct($id);
         $this->nome = $nome;
         $this->cnpj = $cnpj;
         $this->descricao = $descricao;
@@ -25,6 +36,7 @@ class Ong extends AbsId
         $this->cep = $cep;
         $this->bairro = $bairro;
         $this->senha = $senha;
+        $this->table = 'Ong';
     }
 
     public function setNome($nome)
