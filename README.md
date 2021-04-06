@@ -1,10 +1,10 @@
 ![](/res/images/conex.png)
 
-## Projeto Criado durante o Hackathon promovido pela Softex (23-31 de Março de 2021).
+## Solução para o Hackathon do curso de Desenvolvimento de Software, promovido pela Softex em parceria com a Recicont. 
 
 ## :rocket: Descrição
 
-  A plataforma **Conexão Ajuda** veio para promover uma transformação maior no meio da voluntarização, facilitando o encontro entre as organizações, pessoas voluntárias e ações.
+  A plataforma **Conexão Ajuda** veio para promover uma maior transformação no meio da voluntarização, facilitando o encontro entre as organizações, pessoas voluntárias e ações, através do uso da tecnologia web.
 
 ## :computer: Tecnologias
 
