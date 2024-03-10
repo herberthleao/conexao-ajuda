@@ -22,4 +22,4 @@
 |André Luan |andreluan176@gmail.com|DBA|
 |Erisson Calado |erisson2@gmail.com|Back-end|
 |Stheyce Souza |stheycesouza15@gmail.com|Back-end|
-|Herberth Leão |herberth.leao@pm.me|Front-end|
+|Herberth Leão |contact@herberthleao.com|Front-end|
